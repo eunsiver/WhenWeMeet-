@@ -1,0 +1,178 @@
+/*--------시작 ---------*/
+:root {
+  --background: #3d3d3d;
+}
+
+@font-face {
+  font-family: "TmoneyRoundWindExtraBold";
+  src: url("../font/TmoneyRoundWindExtraBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  /*-webkit-user-drag: none;*/
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 16px;
+  font-family: "TmoneyRoundWindExtraBold";
+}
+
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*---페이지---*/
+.page {
+  width: 100%;
+  height: calc(100% - 64px);
+  padding-bottom: 64px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: var(--font-color);
+}
+
+.page::-webkit-scrollbar {
+  display: none;
+}
+
+/*---네비게이션 바---*/
+footer {
+  z-index: 5;
+  height: 63px;
+  width: 100%;
+  background: white;
+  border-top: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  line-height: 63px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer > a {
+  color: #3d3d3d;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: none;
+}
+
+.footer-menu {
+  width: 32px;
+  height: 64px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  filter: invert(80%);
+}
+
+.footer-calendar {
+  background-image: url(../img/calendar.svg);
+}
+
+.on-tab {
+  /*filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);*/
+  filter: invert(0%) !important;
+}
+
+/*---팝업---*/
+.popup-container {
+  display: none;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  z-index: 11;
+  margin-left: 5%;
+  width: 80%;
+  padding: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow: hidden;
+  background: #3d3d3d;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: white;
+}
+
+.popup-title {
+  font-weight: bold;
+  line-height: 32px;
+  border-bottom: 1px solid gray;
+}
+
+.popup-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 64px;
+}
+
+.ad-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.popup-button-container {
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup-button {
+  height: 32px;
+  line-height: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: skyblue;
+}
+
+.loading {
+  /* background: #e4afb8; */
+  background: #efe5e1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-image: url("../img/loginlogo.png");
+  background-size: 150px 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

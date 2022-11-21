@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<!--월일 NN-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src * data:*; img-src * 'self' data: https:; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/manna.css">
+        <script src="https://kit.fontawesome.com/46c3d0d3b1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--우리 언제 만나?!-->
+        <div class="popup-container">
+            <div class="popup">
+                <div class="popup-title">친구선택</div>
+                <div class="popup-content">
+                    <input type="text" name="find-friend" id="find-freind" placeholder="이름 검색">
+                </div>
+                <div class="bigbox friends-box">
+
+                    <label for="c1">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c1">
+                        </div>
+                    </label>
+                    <label for="c2">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이유빈</div>
+                            <input type="checkbox" class="feel" name="" id="c2">
+                        </div>
+                    </label>
+                    <label for="c3">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">변준영</div>
+                            <input type="checkbox" class="feel" name="" id="c3">
+                        </div>
+                    </label>
+                    <label for="c4">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">안야양</div>
+                            <input type="checkbox" class="feel" name="" id="c4">
+                        </div>
+                    </label>
+                    <label for="c5">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c5">
+                        </div>
+                    </label>
+                    <label for="c6">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c6">
+                        </div>
+                    </label>
+                    <label for="c7">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c7">
+                        </div>
+                    </label>
+                    <label for="c8">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c8">
+                        </div>
+                    </label>
+                    <label for="c9">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c9">
+                        </div>
+                    </label>
+                    <label for="c10">
+                        <div class="people_box">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c10">
+                        </div>
+                    </label>
+                    <label for="c11">
+                        <div class="people_box1">
+                            <img src="./img/basic copy.png" alt="프로필" class="profile">
+                            <div class="P-name">이은지</div>
+                            <input type="checkbox" class="feel" name="" id="c11">
+                        </div>
+                    </label>
+                </div>
+                <div class="p-b">
+                    <div class="popup-button1" onclick="setFriends()">확인</div>
+                    <div class="popup-button2" onclick="document.querySelector('.popup-container').style.display = 'none';">
+                        취소</div>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="meet">
+                <div class="who">
+                    <div class="left">누구랑</div>
+                    <div class="inputmeet" id="withwhom">은지,유빈,준영</div>
+                    <i id="meetplus" class="fas fa-user-plus" onclick="addFriendPopup()"></i>
+                </div>
+            </div>
+            <div class="meet">
+                <div class="who">
+                    <div class="left">언제</div>
+                    <div class="inputmeet" style="height: 80px;">
+                        <input type="date" name="date" class="wholeday startdate">부터
+                        <input type="date" name="date" class="wholeday enddate">까지
+                    </div>
+                </div>
+            </div>
+            <div class="meet">
+                <div class="who">
+                    <div class="left">얼마나</div>
+                    <div class="inputmeet">
+                        <label for="cc1">
+                            <input type="radio" name="c_info" id="cc1" onClick="dispList('1');" />
+                            당일
+                        </label>
+                        <label for="cc2">
+                            <input type="radio" name="c_info" id="cc2" onClick="dispList('2');" />
+                            N박N일
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="Npark" class="hide">
+                <div class="meet">
+                    <div class="who">
+                        <div class="left">N박N일</div>
+                        <div class="inputmeet">
+                            <input type="number" name="N박" class="m_inputbox" min="0">
+                            <span>박</span>
+                            <input type="number" name="N박" id="playing-dates" class="m_inputbox" min="0">
+                            <span>일</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="meet">
+                    <div class="who">
+                        <div class="left">뭐하고</div>
+                        <div class="inputmeet">
+                            <input type="text" name="what?" maxlength="16" id="what" placeholder="뭐하고 놀거야? (최대16자)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dday" class="hide">
+                <div class="meet">
+                    <div class="who">
+                        <div class="left">몇시간</div>
+                        <div class="inputmeet">
+                            <input type="number" name="N시간" class="m_inputbox" min="0">
+                            <span>시</span><span id="time">~</span>
+                            <input type="number" name="N시간" class="m_inputbox" min="0" value="24">
+                            <span>시</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="meet">
+                    <div class="who">
+                        <div class="left">뭐하고</div>
+                        <div class="inputmeet">
+                            <input type="text" name="what?" maxlength="16" id="what" placeholder="뭐하고 놀거야? (최대16자)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="checkbutton" onclick="manna()">확인</button>
+        </div>
+        <div class="popup-container1">
+            <div class="popup1">
+                <div style="display: flex; position: relative; top: 7px; left: 10px;"
+                    onclick="document.querySelector('.popup-container1').style.display='none'">
+                    <img src="./img/back.svg" width="20px" height="20px">
+                    <div class="popup-title1">다시 설정하기</div>
+                </div>
+                <div class="popup-content1">
+                    <div id="calendar-page" class="page" style="background:#E4AFB8;">
+                        <!-- 달력 -->
+                        <div class="calendar-title-container">
+                            <a href="javascript:calendarMove(-1)" class="calendar-page-button"><div style="background-image:url(./img/left-arrow.svg)"></div></a>
+                            <div class="calendar-title">선택 일자</div>
+                            <a href="javascript:calendarMove(1)" class="calendar-page-button"><div style="background-image:url(./img/right-arrow.svg)"></div></a>
+                        </div>
+                        <div class="calendar">
+                            <div class="calendar-row">
+                                <div class="calendar-day">일</div>
+                                <div class="calendar-day">월</div>
+                                <div class="calendar-day">화</div>
+                                <div class="calendar-day">수</div>
+                                <div class="calendar-day">목</div>
+                                <div class="calendar-day">금</div>
+                                <div class="calendar-day">토</div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-date"></div>
+                                <div class="calendar-date"></div>
+                                <div class="calendar-date"></div>
+                                <div class="calendar-date">1</div>
+                                <div class="calendar-date">2</div>
+                                <div class="calendar-date">3</div>
+                                <div class="calendar-date">4</div>
+                            </div>
+                        </div>
+                        <!--세부 정보-->
+                    </div>
+                    <!-- <div class="list" style="background-color: #DF6C7E; position: relative;bottom: 50px;">
+                <div class="list-title">2020년 12월 29일</div>
+            </div> -->
+                    <div class="time-popup-container tp1">
+                        <div class="fitdate" style="padding: 15px 10px 5px 10px;">
+                            12월 11일
+                        </div>
+                        <!-- <div class="fitwhat" style="text-align: center; background-color: white; padding: 8px; margin: 10px; border-radius: 5px;">
+                유빈이랑 놀기><
+                </div> -->
+                        <input type="text" name="fitwhat" id="fitwhat" placeholder="뭐하고 놀거야?">
+                        <div class="fitbutton"
+                            style="text-align: center; background-color: #dac2e1; margin: 15px 80px 0px 80px; padding: 5px 0px 5px 0px; border-radius: 5px;">
+                            일정추가
+                        </div>
+                    </div>
+                    <div class="time-popup-container tp2">
+
+                        <div class="timebox t1">
+                            <div class="time-people">
+                                은지
+                            </div>
+                            <div class="whentime">
+                                11시-12시
+                            </div>
+                        </div>
+                        <div class="timebox t1">
+                            <div class="time-people">
+                                은지
+                            </div>
+                            <div class="whentime">
+                                13시-14시
+                            </div>
+                        </div>
+                        <div class="timebox t2">
+                            <div class="time-people">
+                                준영
+                            </div>
+                            <div class="whentime">
+                                09시-12시
+                            </div>
+                        </div>
+                        <div class="timebox t3">
+                            <div class="time-people">
+                                유빈
+                            </div>
+                            <div class="whentime">
+                                10시-12시
+                            </div>
+                        </div>
+                        <div class="timebox t3">
+                            <div class="time-people">
+                                유빈
+                            </div>
+                            <div class="whentime">
+                                14시-15시
+                            </div>
+                        </div>
+                        <div class="timebox t4">
+                            <div class="time-people">
+                                선미
+                            </div>
+                            <div class="whentime">
+                                11시-12시
+                            </div>
+
+                        </div>
+                        <div class="timebox t5">
+                            <div class="time-people">
+                                수지
+                            </div>
+                            <div class="whentime">
+                                10시-12시
+                            </div>
+                        </div>
+                        <div class="timebox t6">
+                            <div class="time-people">
+                                효린
+                            </div>
+                            <div class="whentime">
+                                11시-12시
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-evenly; position: relative; bottom: 40px;">
+                        <input type="button" value="카카오톡 공유" style="font-size: 13px;">
+                        <input type="button" value="임시저장" style="font-size: 13px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!-- <a href="javascript:location.pathname='/'"><div id="tab-calendar" class="footer-calendar footer-menu"></div></a>
+            <a href="javascript:location.pathname='/manna'"><div id="tab-meet" class="footer-calendar footer-menu on-tab"></div></a>
+            <a href="javascript:location.pathname='/friends'"><div id="tab-friend" class="footer-calendar footer-menu"></div></a>
+            <a href="javascript:location.pathname='/mypage'"><div id="tab-mypage" class="footer-calendar footer-menu"></div></a> -->
+            <a href="javascript:location.pathname='/'">
+                <div id="tab-calendar" class="footer-calendar footer-menu"></div>
+            </a>
+            <a href="javascript:location.pathname='/manna'"><img src="./img/basic copy.png" class="footer-manna"
+                    width="55px" height="50px" alt="manna"></img></a>
+            <a href="javascript:location.pathname='/friends'"><img src="./img/mfriends_g.svg" class="footer-friends"
+                    width="35px" height="50px" alt="friends" fill="gray"></a></a>
+            <a href="javascript:location.pathname='/mypage'"><img src="./img/setting_g.svg" class="footer-settidng"
+                    width="30px" height="60px" alt="friends"></img></a>
+        </footer>
+        <script src="js/index.js"></script>
+        <script src="js/manna.js"></script>
+    </body>
+</html>

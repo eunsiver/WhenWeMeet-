@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <!-- 로그인 페이지 -->
+        <div class="login-container">
+            <a href="javascript:location.pathname='/signup'" style="display:inline-block;position:absolute;top:10px;right:20px;"><div class="login-btn">회원 가입</div></a>
+            <img src="./img/loginlogo.png" alt="loginlogo" class="login_logo" width="200" height="200">
+            
+            <div class="login-box">
+                <div class="error-message"></div>
+                <form method="POST" id="login">
+                    <div><input name="email" class="login-id" type="email" placeholder="이메일 입력"></div>
+                    <div><input name="pwd" class="login-password" type="password" placeholder="비밀번호 입력"></div>
+                    <div style="width:100%;display:flex;flex-direction:row;justify-content:center"><a href="javascript:login()" style="color:white"><div class="login-btn">확인</div></a></div>
+                </form>
+            </div>
+        </div>
+        <script src="js/index.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+</html>

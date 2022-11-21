@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ugo.meeting" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>우리 언제 만나</name>
+    <description>
+        almost ready for deploy
+    </description>
+    <author email="bjy0212@gmail.com" href="https://github.com/bjy0212">
+        Full-Stack Developer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="icon.png"/> <!--platform="android" width="64" height="64" density="mdpi" /-->
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <allow-intent href="intent:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <!-- <preference name="loadUrlTimeoutValue" value="60000" /> 로딩이 너무 길어서 오류가 나오는것을 방지. -->
+</widget>

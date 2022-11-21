@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https:; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/mypage.css">
+    </head>
+    <body>
+        <!--마이 페이지-->
+        <!-- <div class="popup-container1">
+            <div class="popup1">
+                <div class="popup-title1">포로필 설정</div>
+                <div class="popup-content1">
+                    <img src="./img/loginlogonoback.png" alt="프로필 사진" style="background-color: white; border-radius: 30%;" width="20%" >   
+                    <input type="file" name="uploadimg" id="uploadimg" accept="images/*" style="display: none; ">
+                    <label for="uploadimg" >사진업로드</label>
+                </div>
+                <div onclick="changeProfile" class="popup-button1">확인</div>
+            </div>
+        </div> -->
+        <div id="mypage-page" class="page" style="background:#e4afb8">
+            <div class="my-profile">
+                <input id="photo-input" class="photo-input" type="file">
+                <label for="photo-input">
+                    <div class="profile-image" style="background-image:url($[[profile]])">
+                        <span class="change-icon">+</span>
+                    </div>
+                </label>
+            </div>
+            <form id="profile-form" action="/profileImage" method="POST"><input name="profile" class="profile-form-input" type="text" value=""></form>
+            <div class="error-message profile-error"></div>
+            <div class = "my">
+                 <div class="my-list">코드:</div>
+                 <div class="my-input my-code">$[[code]]<img src="./img/pencil.svg" width="20px" height="20px">  </div>
+            </div>
+            <div class = "my">  
+                <div class="my-list">이름:</div>
+                <div class="my-input my-name">$[[name]]<img src="./img/pencil.svg" width="20px" height="20px"> </div>
+            </div>
+            <div class = "my">
+                <div class="my-list">소개:</div>
+                <div class="my-input my-info">$[[info]]<img src="./img/pencil.svg" width="20px" height="20px"> </div>
+            </div>
+            <!-- 이거 추후에 지울 수도 -->
+            <div style="display:flex;flex-direction:row;justify-content:center"><a href="javascript:changeSettings()" style="color:white"><div class="my-login-btn">설정</div></a></div>
+            
+            <div class = "my">
+                <div class="my-list">다른 방법으로 로그인:</div>
+                <button type="button" class="my-login-btn2" >    
+                    <img id="kkoimg" src="./img/kakao.svg" width="20px" height="22px">
+                </button>
+            </div>
+            <div class = "my">
+                <form class="logout-form" action="/logout" method="POST"></form>
+                <div style="width:100%;display:flex;justify-content:center;"><a href="javascript:document.querySelector('.logout-form').submit()" style="text-align:center;color:black"><div class="my-list" style="text-align:center;">로그아웃</div></a></div>
+            </div>
+            <div class = "my">
+                <form class="secede-form" action="/secede" method="POST"></form>
+                <div style="width:100%;display:flex;justify-content:center;"><a href="javascript:document.querySelector('.secede-form').submit()" style="text-align:center;color:black"><div class="my-list" style="text-align:center;">회원 탈퇴</div></a></div>
+            </div>
+        </div>
+        <footer>
+            <a href="javascript:location.pathname='/'"><div id="tab-calendar" class="footer-calendar footer-menu"></div></a>
+          <a href="javascript:location.pathname='/manna'"><img src="./img/basic_g.png"  class="footer-manna" width="55px" height="50px" alt="manna" ></img></a>
+          <a href="javascript:location.pathname='/friends'"><img src="./img/mfriends_g.svg"  class="footer-friends" width="35px" height="50px" alt="friends" fill="gray" ></a></a>
+          <a href="javascript:location.pathname='/mypage'"><img src="./img/setting.svg" class="footer-settidng"width="30px" height="60px" alt="friends"></img></a>
+        </footer>
+        <script src="js/index.js"></script>
+        <script src="js/mypage.js"></script>
+    </body>
+</html>

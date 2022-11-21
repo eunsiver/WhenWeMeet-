@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <style>
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .close-btn-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .close-btn {
+                background: #3d3d3d;
+                border-radius: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="close-btn-container"><a href="javascript:Close()"><div class="close-btn">앱 종료</div></a></div>
+        <script>
+            function Close() {
+                window.open('','_self').close(); 
+            }
+        </script>
+    </body>
+</html>

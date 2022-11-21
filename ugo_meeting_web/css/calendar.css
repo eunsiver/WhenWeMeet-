@@ -1,0 +1,273 @@
+/*---유빈 코딩 천재 ><---*/
+/*---캘린더 화면---*/
+.calendar {
+    width: 100%;
+    background: #f8f3f3;
+}
+
+.calendar-title {
+    width: 100%;
+    line-height: 32px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+}
+
+.calendar-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.calendar-day {
+    width: 14%;
+    border: 1.5px solid#f9d2a5;
+    background: #f9d2a5;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+}
+
+.calendar-date {
+    width: 14%;
+    border: 1px solid #f3d2d7;
+    line-height: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 5px;
+    color: #303847;
+}
+
+.today {
+    background: #f9d2a5;
+}
+
+.selected-date {
+    background: #ffa43c !important;
+}
+
+.calendar-page-button {
+    color: white;
+}
+
+.calendar-page-button > div {
+    padding: 5px;
+    width: 32px;
+    background-size: 24px 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 32px;
+    line-height: 32px;
+    filter: invert(100%);
+}
+
+.calendar-title-container {
+    background: #1d283b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*---세부 정보---*/
+.selected-date-info-container {
+    background: white;
+}
+
+/* 리스트 */
+
+.list {
+    display: none;
+    flex-direction: column;
+    margin-top: calc(3% - 4px);
+    align-items: center;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 5px solid #DF6C7E;
+}
+
+.list1 {
+    display: flex;
+    background-color: white;
+    width: 100%;
+}
+
+.left {
+    background-color: #f9d7d1;
+    position: relative;
+    width: 20%;
+    text-align: center;
+}
+
+.inputmeet {
+    width: calc(80% - 20px);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+    text-align: left;
+    /*margin: calc(6%);*/
+}
+
+.plus-button {
+    display: none;
+    text-align: center;
+    margin: calc(6% - 4px);
+}
+
+/* 팝업창 */
+.popup-time {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: calc(2%);
+    padding-top: 10px;
+}
+
+.popup-content {
+    /* width: 90%; */
+    overflow: hidden;
+    display: flex;
+    /* border-top: 1px solid gray; */
+}
+
+.m_inputbox {
+    width: 3rem;
+    position: relative;
+    text-align: center;
+    border: 3px solid #fbb1b5;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.day-nignt {
+    position: relative;
+    text-align: center;
+    border: 3px solid #fbb1b5;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.start-end {
+    margin-top: 5px;
+}
+
+.popup-color {
+    display: flex;
+    padding-top: 3%;
+    line-height: 30px;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    vertical-align: middle;
+    line-height: 150px;
+    margin-bottom: 5px;
+    border: 3px solid white;
+}
+.circle1 {
+    background-color: #f9d7d1;
+}
+.circle2 {
+    /* background-color: #fb8c65; */
+    background-color: #f5c098;
+}
+.circle3 {
+    background-color: #fde0a2;
+}
+.circle4 {
+    background-color: #bdddbf;
+}
+.circle5 {
+    background-color: #b2d0eb;
+}
+.circle6 {
+    background-color: #dac2e1;
+}
+.circle-selected {
+    border: 3px solid black;
+}
+
+.popup-error {
+    line-height: 30px;
+}
+
+.list-title {
+    background-color: #ffa899;
+    line-height: 30px;
+    height: 30px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.popup-button-rignt {
+    height: 32px;
+    /*border-bottom: 1px solid gray;*/
+    /*line-height: 32px;*/
+    font-weight: bold;
+    margin-left: 0px;
+    color: blue;
+}
+
+.popup-title-cal {
+    margin-left: 20px;
+    font-weight: bold;
+    /* line-height: 32px; */
+}
+
+.up-bar {
+    display: flex;
+    border-bottom: 1px solid gray;
+    justify-content: space-between;
+}
+
+.up-bar > div > a {
+    text-decoration: none;
+}
+
+.middle-bar-container {
+    width: 100%;
+    overflow-x: scroll;
+      border-bottom: 1px solid gray;
+}
+
+.middle-bar {
+    display: flex;
+    flex-wrap: nowrap;
+  
+    padding: 10px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.middle-bar > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 80px;
+    word-wrap: break-word;
+    word-break: keep-all;
+    margin-right: 10px;
+    font-size: 13px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    line-height: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #f3d2d7;
+}
+
+.middle-bar > img {
+    margin-right: 10px;
+    /* text-align: left; */
+}
+
+.popup-preset{
+    margin-top: 20px;
+    text-align: center;
+
+}

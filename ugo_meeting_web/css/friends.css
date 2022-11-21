@@ -1,0 +1,65 @@
+.wrap_box {
+  width: 95%;
+  margin: 20px auto;
+  /* overflow:hidden; */
+}
+
+.img_box {
+  /* float: left;
+    display: flex; */
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 3.5px solid #efefef;
+  border-radius: 5px;
+}
+
+.img_box > img {
+  margin: 9px 1px 9px 1px;
+  border-radius: 50%;
+  float: left;
+  padding: 2px;
+}
+
+.f-name {
+  margin: 17px 5px 17px 5px;
+  float: left;
+  font-size: 15px;
+}
+
+.f-message {
+  float: right;
+  box-sizing: border-box;
+  border: 3px solid #f9d7d1;
+  padding: 5px 5px 5px 5px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 5px;
+  max-width: 50%;
+  font-size: 12px;
+  background-color: #f9d7d1;
+}
+
+.new-friend {
+  width: 100%;
+  background: #1d283b;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.new-friend-btn {
+  background: #1d283b;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 0px;
+  margin: auto;
+}
+#codeinput {
+  width: 80%;
+  position: relative;
+  border: 0;
+  overflow: hidden;
+}

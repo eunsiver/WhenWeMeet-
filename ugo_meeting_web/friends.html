@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https:; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/friends.css">
+    </head>
+    <body>
+        <div class="popup-container">
+            <div class="popup">
+                <div onclick="document.querySelector('.popup-container').style.display='none'"> 
+                    <img src="./img/back.svg" width="20px" height="20px">
+                </div>
+                <div class="popup-title">친구추가</div>
+                <div class="popup-content">코드:
+                    <input type="text" name="codeinfo" id="codeinput" maxlength="8" placeholder="코드를 입력하세요(8자리)">
+                </div>
+                <div class="error-message code-error" style="text-align: center;"></div>
+                <div class="popup-button" onclick="friendAdd()">확인</div>
+            </div>
+        </div>
+        <!--친구 페이지-->
+        <header width="100%">
+            <div class="new-friend">
+                <div style="display:flex;flex-direction:row;justify-content:center"><a href="javascript:friendPopup()" style="color:white"><div class="new-friend-btn">+ 친구추가</div></a></div>
+            </div>
+        </header>
+        
+        <div id="friend-page" class="page" style="background:#e4afb8;">
+            <div id = "friend-box" style="padding-bottom:20px">
+                <div class="wrap_box">
+                    $[[friends]]
+                    <!-- <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변준영</div>
+                        <div class="f-message"> 정보가 정확하지 않다. </div>
+                    </div>
+
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">이은지</div>
+                    <div class="f-message">고양이는 고양이에요</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">홍길동</div>
+                        <div class="f-message"> 효리니 최고</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변사또</div>
+                    <div class="f-message">배고파</div>
+                    </div>           
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변준영</div>
+                        <div class="f-message"> 정보가 정확하지 않다. </div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">이은지</div>
+                    
+                    <div class="f-message">고양이는 고양이에요</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">홍길동</div>
+                        <div class="f-message"> 효리니 최고</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변사또</div>
+                    <div class="f-message">배고파</div>
+                    </div>        
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변준영</div>
+                        <div class="f-message"> 정보가 정확하지 않다. </div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">이은지</div>
+                    <div class="f-message">고양이는 고양이에요</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">홍길동</div>
+                        <div class="f-message"> 효리니 최고</div>
+                    </div>
+                    <div class="img_box">
+                        <img src="./img/kakao.svg" width="20px" height="20px">
+                        <div class="f-name">변사또</div>
+                    <div class="f-message">배고파</div>
+                    </div>         -->
+                </div>
+            </div>
+        </div>
+       
+        <footer>
+            <a href="javascript:location.pathname='/'"><div id="tab-calendar" class="footer-calendar footer-menu"></div></a>
+            <a href="javascript:location.pathname='/manna'"><img src="./img/basic_g.png"  class="footer-manna" width="55px" height="50px" alt="manna" ></img></a>
+            <a href="javascript:location.pathname='/friends'"><img src="./img/mfriends.svg"  class="footer-friends" width="35px" height="50px" alt="friends" fill="gray" ></a></a>
+            <a href="javascript:location.pathname='/mypage'"><img src="./img/setting_g.svg" class="footer-settidng"width="30px" height="60px" alt="friends"></img></a>
+        </footer>
+        <script src="js/index.js"></script>
+        <script src="js/friends.js"></script>
+    </body>
+</html>

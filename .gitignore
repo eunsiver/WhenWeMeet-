@@ -1,0 +1,11 @@
+node_modules
+platforms
+plugins
+.DS_Store
+keystore
+build.json
+sessions
+sync.bat
+.ignore
+.ignore2
+db

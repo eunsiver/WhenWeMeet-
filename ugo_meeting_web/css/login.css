@@ -1,0 +1,60 @@
+/*---로그인---*/
+
+.login-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-box {
+  border: 5px solid var(--color-indigo);
+  border-radius: 5px;
+  margin-left: 10%;
+  padding: 5px;
+  width: calc(80% - 14px);
+  text-align: center;
+}
+
+form > div > a {
+  width: 60%;
+}
+
+.login-btn {
+  background: var(--color-indigo);
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  color: #efe5e1;
+}
+
+.error-message {
+  color: red;
+  position: relative;
+  bottom: 2.5px;
+}
+
+form > div {
+  width: 100%;
+}
+
+input {
+  line-height: 22px;
+  padding: 5px;
+  width: 90%;
+  margin-bottom: 5px;
+  border: 0px;
+  background-color: #f8f3f3;
+}
+.login_logo {
+  display: block;
+  margin: 0px auto;
+  padding-bottom: 50px;
+}

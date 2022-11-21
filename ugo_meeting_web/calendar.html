@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https:; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/calendar.css">
+    </head>
+    <body>
+        <div class="popup-container">
+            <div class="popup">
+                <div class="up-bar">
+                    <div style="display: flex">
+                        <img src="./img/back.svg" width="20px" height="20px" onclick="document.querySelector('.popup-container').style.display='none'">
+                        <div class="popup-title-cal">일정추가</div>
+                    </div>
+                    <div>
+                        <a href="javascript:addSchedule()"><div class="popup-button-rignt">저장</div></a>
+                    </div>
+                </div>
+                <div class="middle-bar-container">
+                    <div class="middle-bar">
+                        <div>출근</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div>점심 약속</div>
+                        <div>저녁 약속</div>
+                        <div>회의</div>
+                        <div><img src="./img/delete.svg" width="20px" height="20px" style="margin-left: 27.5px"></div>
+                    </div>
+                    <!-- <input type='button' value='점심약속'/>
+                    <input type='button' value='저녁약속'/> -->
+                </div>
+
+                <div class="popup-error error-message"></div>
+                <!-- <div class="left">뭐하고</div> -->
+                <div class="popup-content">제목:
+                    <div class="inputmeet">
+                        <input type="text" id="what" placeholder="일정 추가(최대 16자)" maxlength="16">
+                    </div>
+                </div>
+                <!-- 시작 시간 <div class = "time-piker" contenteditable="true"> 12 </div> -->
+                <!-- <input type="time" required="" step="3600"> -->
+                <div class="popup-time"><div class="start-end">시작 시간 :</div> <div class="day-nignt" id="start-ap" onclick="this.innerHTML = this.innerHTML === '오전' ? '오후' : '오전'">오전</div> <input id="start-time" type="number" class="m_inputbox" min="0" max="12" oninput="minmax('start-time', 0, 12)"><div class="start-end">시</div></div>
+                <div class="popup-time"><div class="start-end">종료 시간 :</div><div class="day-nignt" id="end-ap" onclick="this.innerHTML = this.innerHTML === '오전' ? '오후' : '오전'">오후</div> <input type="number" id="end-time" class="m_inputbox" min="0" max="12" oninput="minmax('end-time', 0, 12)"><div class="start-end">시</div></div>
+                <div class="popup-color">색상: 
+                    <div class="circle circle1 circle-selected" onclick="colorChange(0)"></div>
+                    <div class="circle circle2" onclick="colorChange(1)"></div>
+                    <div class="circle circle3" onclick="colorChange(2)"></div>
+                    <div class="circle circle4" onclick="colorChange(3)"></div>
+                    <div class="circle circle5" onclick="colorChange(4)"></div>
+                    <div class="circle circle6" onclick="colorChange(5)"></div>
+                    <div id="color-selected" style="display:none">1</div>
+                </div>
+                <div class="popup-preset"><input type='checkbox' name='gender' value='female'/>   프리셋에 추가하기</div>
+            </div>
+        </div>
+
+        <!--캘린더 페이지-->
+        <div id="calendar-page" class="page" style="background:#E4AFB8;">
+            <!-- 달력 -->
+            <div class="calendar-title-container">
+                <a href="javascript:calendarMove(-1)" class="calendar-page-button"><div style="background-image:url(./img/left-arrow.svg)"></div></a>
+                <div class="calendar-title">2020년 12월</div>
+                <a href="javascript:calendarMove(1)" class="calendar-page-button"><div style="background-image:url(./img/right-arrow.svg)"></div></a>
+            </div>
+            <div class="calendar">
+                    <div class="calendar-row">
+                    <div class="calendar-day">일</div>
+                    <div class="calendar-day">월</div>
+                    <div class="calendar-day">화</div>
+                    <div class="calendar-day">수</div>
+                    <div class="calendar-day">목</div>
+                    <div class="calendar-day">금</div>
+                    <div class="calendar-day">토</div>
+                </div>
+                <div class="calendar-row">
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date">1</div>
+                    <div class="calendar-date">2</div>
+                    <div class="calendar-date">3</div>
+                    <div class="calendar-date">4</div>
+                </div>
+            </div>
+            <!--세부 정보-->
+            <div class="selected-date-info-container">
+            </div>
+
+            <div class="list">
+                <div class="list-title">2020년 12월 29일</div>
+                <img src="./img/delete.svg" width="20px" height="20px">
+
+                <!-- <div class="list1">
+                    <div class="left">10~12</div>
+                    <div class="inputmeet">English Speaking class</div>
+                </div>
+                <hr width="99.8%" color="#E4AFB8">
+                <div class="list1">
+                    <div class="left">15~18</div>
+                    <div class="inputmeet">아롬 A조 전체회의</div>
+                </div>
+                <hr width="99.8%" color="#E4AFB8"> 
+                <div class="list1">
+                    <div class="left">20~23</div>
+                    <div class="inputmeet">은지,준영이와 회의</div>
+                </div> -->
+            </div>
+            <div class="schedule-error error-message"></div>
+            <div class="plus-button" onclick="schedulePopup()" style="margin-bottom:20px;">
+                <img src="./img/plus.svg" width="40px" height="40px">
+            </div>
+        </div>
+        <footer>
+            <a href="javascript:location.pathname='/'"><div id="tab-calendar" class="footer-calendar footer-menu on-tab"></div></a>
+          <a href="javascript:location.pathname='/manna'"><img src="./img/basic_g.png"  class="footer-manna" width="55px" height="50px" alt="manna" ></img></a>
+          <a href="javascript:location.pathname='/friends'"><img src="./img/mfriends_g.svg"  class="footer-friends" width="35px" height="50px" alt="friends" fill="gray" ></a></a>
+          <a href="javascript:location.pathname='/mypage'"><img src="./img/setting_g.svg" class="footer-settidng"width="30px" height="60px" alt="friends"></img></a>
+        </footer>
+        <script src="js/index.js"></script>
+        <script src="js/calendar.js"></script>
+    </body>
+</html>
+
+
+
+
+
+<!-- <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->

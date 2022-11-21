@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=false, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/signup.css">
+    </head>
+    <body>
+        <!-- 가입 페이지 -->
+        <div class="signup-container">
+            <div class="signup-box">
+                <form method="POST" id="signUp">
+                    <div id="nickname"><div class="name-error error-message">*필수 입력 사항입니다.</div>이름:&nbsp;<input name="name" class="signup-name" type="id" placeholder="이름 입력(최대 11자)" maxlength="11" onInput="nameCheck()"></div>
+                    <div id="email"><div class="email-error error-message">*필수 입력 사항입니다.</div>이메일:&nbsp;<input name="email" class="signup-id" type="email" placeholder="이메일 입력" onInput="idCheck()"></div>
+                    <div id="pwd"><div class="pwd-error error-message">*필수 입력 사항입니다.</div>비밀번호:&nbsp;<input name="pwd" class="signup-password" type="password" placeholder="비밀번호 입력" onInput="document.querySelector('.pwd-error').innerHTML = document.querySelector('.signup-password').value.length > 0 ? '' : '*필수 입력 사항입니다.'"></div>
+                    <div id="pwd-check"><div class="pwd-check-error error-message">*필수 입력 사항입니다.</div>비밀번호 확인:&nbsp;<input class="signup-password-check" type="password" placeholder="비밀번호 확인" onInput="pwdCheck()"></div>
+                    <div id="info"><div class="info-error error-message"></div>소개:&nbsp;<input name="info" class="signup-info" maxlength="11" type="id" placeholder="짧은 소개(최대 11자)"></div>
+                    <div id="all-error" class="all-error error-message" style="text-align: center;"></div>
+                    <div id="submit" style="width:100%;display:flex;flex-direction:row;justify-content:center">
+                        <a href="javascript:location.pathname='/'" style="color:white;margin-right:20px;"><div class="signup-btn">취소</div></a>
+                        <a href="javascript:signUp()" style="color:white"><div class="signup-btn">회원 가입</div></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="js/index.js"></script>
+        <script src="js/signup.js"></script>
+    </body>
+</html>
